@@ -1,5 +1,10 @@
 extends layouts/main 
 
 block content
-    span 사진 선택하기
+    .form-container 
+        form(action=`/photo${routes.upload}`, method="post",  enctype= "multipart/form-data")
+            label(for="file") 사진 선택하기
+            input(type="file", id="file", name="photo" ,required=true)
+            input(type="submit", value="사진 고르기")
+
     a(href= routes.photo + routes.frame).button 다음!
