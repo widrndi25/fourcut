@@ -1,0 +1,45 @@
+{
+  "name": "fourcut",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev:server": "nodemon --exec babel-node init.js --delay 2",
+    "dev:assets": "cross-env WEBPACK_ENV=development webpack -w",
+    "build:assets": "cross-env WEBPACK_ENV=production webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/widrndi25/fourcut.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/widrndi25/fourcut/issues"
+  },
+  "homepage": "https://github.com/widrndi25/fourcut#readme",
+  "devDependencies": {
+    "eslint": "^8.29.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "mini-css-extract-plugin": "^2.7.1",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.20.5",
+    "@babel/node": "^7.20.5",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.0",
+    "body-parser": "^1.20.1",
+    "cookie-parser": "^1.4.6",
+    "cross-env": "^7.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "morgan": "^1.10.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  }
+}
