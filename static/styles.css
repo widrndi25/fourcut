@@ -153,3 +153,7 @@ input {
 input:focus, input:active {
   outline: none;
 }
+
+.header {
+  text-align: center;
+}

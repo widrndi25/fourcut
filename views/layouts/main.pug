@@ -5,9 +5,10 @@ html
         link(rel="stylesheet", href = "/static/styles.css")
     body 
         include ../partials/header
-        main 
+
+        main.container
             block content 
-        footer
-            span 무슨무슨네컷
+
+        include ../partials/footer
 
         script(src="/static/main.js")

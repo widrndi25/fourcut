@@ -1,0 +1,11 @@
+extends layouts/main 
+
+block content
+    span 이렇게 만들어요!
+
+    .guidebox
+        .guidebox__text Step 1 사진 고르기
+        .guidebox__text Step 2 프레임 선택하기
+        .guidebox__text Step 3 메일 주소 쓰기
+
+        a(href= routes.photo + routes.choosePhoto).button 사진 고르러 가기!
