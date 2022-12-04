@@ -4,9 +4,14 @@
 @import "partials/header.scss";
 @import "partials/footer.scss";
 @import "pages/home.scss";
+@import "pages/photo.scss";
 
 // 폰트
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 .nanumpenscript * {
+  font-family: "Nanum Pen Script", cursive;
+}
+
+* {
   font-family: "Nanum Pen Script", cursive;
 }
