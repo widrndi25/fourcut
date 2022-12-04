@@ -1,4 +1,19 @@
+import Photo from "../models/Photo";
+import routes from "../router";
+
 export const photo = (req, res) => res.render("photo");
-export const choosePhoto = (req, res) => res.render("choosePhoto");
 export const frame = (req, res) => res.render("frame");
 export const sendMail = (req, res) => res.render("sendMail");
+export const choosePhoto = async (req, res) => {
+  const photos = await Photo.find({});
+  res.render("choosePhoto", { photos });
+};
+export const postUpload = async (req, res) => {
+  const {
+    file: { path },
+  } = req;
+  const newPhoto = await Photo.create({
+    fileUrl: path,
+  });
+  res.redirect(routes.photo + routes.choosePhoto);
+};
