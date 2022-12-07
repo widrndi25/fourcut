@@ -17,3 +17,13 @@ export const postUpload = async (req, res) => {
   });
   res.redirect(routes.photo + routes.choosePhoto);
 };
+
+export const deletePhoto = async (req, res) => {
+  try {
+    await Photo.remove({});
+  } catch (error) {
+    console.log("음 어 이상한데?");
+  }
+
+  res.redirect(routes.photo + routes.choosePhoto); //비디오 삭제가 성공하던 실패하던 home으로 간다.
+};

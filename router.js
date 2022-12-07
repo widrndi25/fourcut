@@ -5,6 +5,7 @@ const HOME = "/";
 const PHOTO = "/photo";
 const FRAME = "/frame";
 const CHOOSEPHOTO = "/chosephoto";
+const DELETE = "/delete";
 const UPLOAD = "/upload";
 const SENDMAIL = "/sendemail";
 
@@ -15,6 +16,7 @@ const routes = {
   upload: UPLOAD,
   frame: FRAME,
   sendMail: SENDMAIL,
+  delete: DELETE,
 };
 
 export default routes;
