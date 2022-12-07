@@ -22,8 +22,7 @@ export const deletePhoto = async (req, res) => {
   try {
     await Photo.remove({});
   } catch (error) {
-    console.log("음 어 이상한데?");
+    console.log("미친");
   }
-
-  res.redirect(routes.photo + routes.choosePhoto); //비디오 삭제가 성공하던 실패하던 home으로 간다.
+  res.redirect(routes.photo + routes.choosePhoto);
 };
