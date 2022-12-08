@@ -2,22 +2,16 @@ extends layouts/main
 include mixins/photoBlock
 
 block content
-    .select-container
-        .form-container 
-            form(action=`/photo${routes.upload1}`, method="post",  enctype= "multipart/form-data")
-                label(for="file") 사진 선택하기
-                input(type="file", id="file", name="photo1" ,required=true)
-                input(type="submit", value="사진 고르기")
-        .form-container 
-            form(action=`/photo${routes.upload2}`, method="post",  enctype= "multipart/form-data")
-                label(for="file") 사진 선택하기
-                input(type="file", id="file", name="photo2" ,required=true)
-                input(type="submit", value="사진 고르기")
-    .photos
-        each photo in photos 
-            +photoBlock({
-                photoFile: photo.fileUrl
-            })
+    .choosePhoto-conatiner
+        .select-container
+            .form-container 
+                form(action=`/photo${routes.upload1}`, method="post",  enctype= "multipart/form-data")
+                    label(for="file") 사진 선택하기
+                    input(type="file", id="file", name="photo1" ,required=true)
+                    input(type="submit", value="사진 고르기")
+                .photos
+                    img(src="/uploads/photos/1.jpg")
 
-    a(href= routes.photo + routes.frame).button 다음!
-    a(href= routes.photo + routes.delete).button 지우기!
+        .button-container
+            a(href= routes.photo + routes.frame).button 다음!
+            a(href= routes.photo + routes.delete).button 지우기!

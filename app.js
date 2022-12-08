@@ -3,6 +3,7 @@ import morgan from "morgan";
 import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
+import path from "path";
 import globalRouter from "./routers/globalRouter";
 import { localsMiddleware } from "./localsMiddleware";
 import routes from "./router";
@@ -12,7 +13,7 @@ const app = express();
 
 app.set("view engine", "pug");
 app.use("/static", express.static("static"));
-app.use("/photo/uploads", express.static("uploads"));
+app.use("/uploads/photos", express.static(path.join(__dirname, "uploads/photos")));
 
 app.use(cookieParser());
 app.use(bodyParser.json());

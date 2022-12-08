@@ -1,28 +1,25 @@
-import Photo from "../models/Photo";
+import fs from "fs";
+import path from "path";
 import routes from "../router";
 
 export const photo = (req, res) => res.render("photo");
 export const frame = (req, res) => res.render("frame");
 export const sendMail = (req, res) => res.render("sendMail");
 export const choosePhoto = async (req, res) => {
-  const photos = await Photo.find({});
-  res.render("choosePhoto", { photos });
+  res.render("choosePhoto");
 };
 export const postUpload = async (req, res) => {
-  const {
-    file: { path },
-  } = req;
-  const newPhoto = await Photo.create({
-    fileUrl: path,
-  });
   res.redirect(routes.photo + routes.choosePhoto);
 };
 
-export const deletePhoto = async (req, res) => {
-  try {
-    await Photo.remove({});
-  } catch (error) {
-    console.log("미친");
-  }
+export const deletePhoto = (req, res) => {
+  fs.unlink(path.join(__dirname, "..", "uploads/photos/1.jpg"), (err) => {
+    try {
+      throw err;
+    } catch {
+      console.log("음 기달려봐");
+    }
+    console.log("파일 삭제 완료");
+  });
   res.redirect(routes.photo + routes.choosePhoto);
 };

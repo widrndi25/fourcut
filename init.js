@@ -1,6 +1,4 @@
-import "./db";
 import app from "./app";
-import "./models/Photo";
 
 const PORT = 4000;
 
