@@ -14,6 +14,7 @@ const app = express();
 app.set("view engine", "pug");
 app.use("/static", express.static("static"));
 app.use("/uploads/photos", express.static(path.join(__dirname, "uploads/photos")));
+app.use("/uploads/frames", express.static(path.join(__dirname, "uploads/frames")));
 
 app.use(cookieParser());
 app.use(bodyParser.json());

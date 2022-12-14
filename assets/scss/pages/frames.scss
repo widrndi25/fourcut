@@ -1,0 +1,13 @@
+.frame-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 400px;
+}
+.framebox {
+}
+.frame {
+}
+.frame > img {
+  width: 20vw;
+  height: 20vh;
+}

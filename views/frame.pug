@@ -1,6 +1,18 @@
 extends layouts/main 
 
 block content
-    span 프레임을 골라주세요!
-    br   
-    a(href= routes.photo + routes.sendMail).button 다음!    `
+    .frame-container
+        .framebox
+            .frame
+                img(src="/uploads/frames/black.jpg")
+        .framebox
+            .frame
+                img(src="/uploads/frames/navy.jpg")
+        .framebox
+            .frame
+                img(src="/uploads/frames/red.jpg")
+        .framebox
+            .frame
+                img(src="/uploads/frames/white.jpg")
+    .buttonbox
+        a(href= routes.photo + routes.sendMail).button 다음!
