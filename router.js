@@ -9,12 +9,12 @@ const DELETE1 = "/delete1";
 const DELETE2 = "/delete2";
 const DELETE3 = "/delete3";
 const DELETE4 = "/delete4";
-const DELETEALL = "/deleteALL";
 const UPLOAD1 = "/upload1";
 const UPLOAD2 = "/upload2";
 const UPLOAD3 = "/upload3";
 const UPLOAD4 = "/upload4";
 const SENDMAIL = "/sendemail";
+const SENDPHOTO = "/sendphoto";
 
 const routes = {
   home: HOME,
@@ -26,11 +26,11 @@ const routes = {
   upload4: UPLOAD4,
   frame: FRAME,
   sendMail: SENDMAIL,
+  sendPhoto: SENDPHOTO,
   delete1: DELETE1,
   delete2: DELETE2,
   delete3: DELETE3,
   delete4: DELETE4,
-  deleteAll: DELETEALL,
 };
 
 export default routes;

@@ -2,5 +2,8 @@ extends layouts/main
 
 block content
     span 메일로 보냅시다
-    br 
-    a(href= routes.home).button 처음으로 돌가가기!
+    .mailform-container 
+        form(action=`/photo${routes.sendPhoto}`, method="post",  enctype= "multipart/form-data")
+            label(for="email") 이메일을 입력해주세요
+            input(type="email", id="eamil", name="email" ,required=true)
+            input(type="submit", value="메일 보내기!")

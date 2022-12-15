@@ -8,6 +8,7 @@ import {
   deletePhotoAll,
   frame,
   photo,
+  postMail,
   postUpload,
   sendMail,
 } from "../controllers/photoController";
@@ -26,8 +27,8 @@ photoRouter.get(routes.delete1, deletePhoto1);
 photoRouter.get(routes.delete2, deletePhoto2);
 photoRouter.get(routes.delete3, deletePhoto3);
 photoRouter.get(routes.delete4, deletePhoto4);
-photoRouter.get(routes.deleteAll, deletePhotoAll);
 photoRouter.get(routes.frame, frame);
 photoRouter.get(routes.sendMail, sendMail);
+photoRouter.post(routes.sendPhoto, postMail, photo);
 
 export default photoRouter;

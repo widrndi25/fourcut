@@ -2,8 +2,6 @@ import multer from "multer";
 import routes from "./router";
 import { upload1, upload2, upload3, upload4 } from "./upload";
 
-// TODO:코드 효율화
-
 const multerPhotos1 = multer({ storage: upload1 });
 const multerPhotos2 = multer({ storage: upload2 });
 const multerPhotos3 = multer({ storage: upload3 });

@@ -1,7 +1,8 @@
+import dotenv from "dotenv";
 import app from "./app";
 
-const PORT = 4000;
+dotenv.config();
 
-const handleListening = () => console.log(`✅Listening on: http://localhost:${PORT}`);
+const handleListening = () => console.log(`✅Listening on: http://localhost:${process.env.PORT}`);
 
-app.listen(PORT, handleListening);
+app.listen(process.env.PORT, handleListening);
