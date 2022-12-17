@@ -31,6 +31,6 @@ photoRouter.get(routes.delete4, deletePhoto4);
 photoRouter.get(routes.frame, frame);
 photoRouter.get(routes.makePhoto, mergeImage);
 photoRouter.get(routes.sendMail, sendMail);
-photoRouter.post(routes.sendPhoto, postMail, photo);
+photoRouter.post(routes.sendPhoto, postMail);
 
 export default photoRouter;

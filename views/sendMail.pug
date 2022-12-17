@@ -10,7 +10,7 @@ block content
             input(type="text", id="text", name="text" ,required=true)
             input(type="submit", value="메일 보내기!")
     .mailform-container 
-        form(action=`/photo${routes.sendPhoto}`, method="post",  enctype= "multipart/form-data")
+        form(action=`/photo${routes.sendPhoto}`, method="post")
             label(for="email") 이메일을 입력해주세요
-            input(type="email", id="eamil", name="email" ,required=true)
+            input(type="text", id="eamil", name="email" ,required=true)
             input(type="submit", value="메일 보내기!")

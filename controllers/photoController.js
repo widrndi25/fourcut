@@ -3,9 +3,7 @@ import fsExtra from "fs-extra";
 import path from "path";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
-import sharp from "sharp";
 import routes from "../router";
-
 dotenv.config();
 
 function handleDeletePhoto(filename) {
@@ -90,6 +88,10 @@ export const mergeImage = async (req, res) => {
   res.redirect(routes.photo + routes.sendMail);
 };
 export const postMail = async (req, res) => {
+  const {
+    body: { email },
+  } = req;
+
   let transporter = nodemailer.createTransport({
     service: "gmail",
     host: "stmp.gmail.com",
@@ -101,9 +103,9 @@ export const postMail = async (req, res) => {
     },
   });
   let info = await transporter.sendMail({
-    from: `"화양네컷" <${process.env.SENDER_EMAIL}>`,
-    to: "widrndi2@naver.com",
-    subject: "화양네컷 사진입니다",
+    from: `"화양필름" <${process.env.SENDER_EMAIL}>`,
+    to: email,
+    subject: "화양필름 사진이 도착했어요!",
     text: "테스트입니다.",
     attachments: [
       {
