@@ -1,16 +1,13 @@
 extends layouts/main 
 
 block content
-    .final-imgbox
-        img(src="/uploads/done/done.jpg")
-    span 메일로 보냅시다
-    .name-container 
-        form(action=`/photo${routes.sendPhoto}`, method="post",  enctype= "multipart/form-data")
-            label(for="text") 이메일을 입력해주세요
-            input(type="text", id="text", name="text" ,required=true)
-            input(type="submit", value="메일 보내기!")
-    .mailform-container 
-        form(action=`/photo${routes.sendPhoto}`, method="post")
-            label(for="email") 이메일을 입력해주세요
-            input(type="text", id="eamil", name="email" ,required=true)
-            input(type="submit", value="메일 보내기!")
+    .sendMail-container
+        .final-imgbox
+            img(src="/uploads/done/final.jpg")
+        .name-container 
+            form(action= routes.photo + routes.sendPhoto, method="post")
+                label(for="text") 이름을 입력해주세요
+                input(type="text", id="text", name="userName", placeholder="여기에 입력!", required=true)
+                label(for="email") 이메일을 입력해주세요
+                input(type="text", id="eamil", name="email", placeholder="여기에 입력!", required=true)
+                input(type="submit", value="메일 보내기!")
