@@ -13,6 +13,7 @@ const UPLOAD1 = "/upload1";
 const UPLOAD2 = "/upload2";
 const UPLOAD3 = "/upload3";
 const UPLOAD4 = "/upload4";
+const MAKEPHOTO = "/makephoto";
 const SENDMAIL = "/sendemail";
 const SENDPHOTO = "/sendphoto";
 
@@ -31,6 +32,7 @@ const routes = {
   delete2: DELETE2,
   delete3: DELETE3,
   delete4: DELETE4,
+  makePhoto: MAKEPHOTO,
 };
 
 export default routes;

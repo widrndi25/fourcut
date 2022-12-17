@@ -7,6 +7,7 @@ import {
   deletePhoto4,
   deletePhotoAll,
   frame,
+  mergeImage,
   photo,
   postMail,
   postUpload,
@@ -28,6 +29,7 @@ photoRouter.get(routes.delete2, deletePhoto2);
 photoRouter.get(routes.delete3, deletePhoto3);
 photoRouter.get(routes.delete4, deletePhoto4);
 photoRouter.get(routes.frame, frame);
+photoRouter.get(routes.makePhoto, mergeImage);
 photoRouter.get(routes.sendMail, sendMail);
 photoRouter.post(routes.sendPhoto, postMail, photo);
 
