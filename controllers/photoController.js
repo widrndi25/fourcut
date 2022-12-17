@@ -2,6 +2,7 @@
 import fs from "fs";
 import fsExtra from "fs-extra";
 import path from "path";
+import express from "express";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import sharp from "sharp";
@@ -26,10 +27,10 @@ function handleDeletePhoto(filename) {
 
 function makePhotoList() {
   const photos = [
-    path.join(__dirname, "..", `uploads/photos/1.jpeg`),
-    path.join(__dirname, "..", `uploads/photos/2.jpeg`),
-    path.join(__dirname, "..", `uploads/photos/3.jpeg`),
-    path.join(__dirname, "..", `uploads/photos/4.jpeg`),
+    path.join(__dirname, "..", `uploads/photos/1.jpg`),
+    path.join(__dirname, "..", `uploads/photos/2.jpg`),
+    path.join(__dirname, "..", `uploads/photos/3.jpg`),
+    path.join(__dirname, "..", `uploads/photos/4.jpg`),
   ].map((file) => ({
     input: file,
   }));
@@ -90,7 +91,7 @@ export const deletePhoto4 = (req, res) => {
   handleDeletePhoto("4");
   res.redirect(routes.photo + routes.choosePhoto);
 };
-export const deletePhotoAll = (req, res) => {
+export const deletePhotoAll = (req, res, next) => {
   fsExtra.emptyDir(path.join(__dirname, "..", "uploads/done"), (err) => {
     try {
       throw err;
@@ -105,7 +106,7 @@ export const deletePhotoAll = (req, res) => {
       console.log("조끔만 더 기달려봐");
     }
   });
-  res.redirect(routes.photo + routes.choosePhoto);
+  next();
 };
 export const sendMail = (req, res) => {
   res.render("sendMail");

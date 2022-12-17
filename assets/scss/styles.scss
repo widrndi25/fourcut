@@ -10,11 +10,15 @@
 @import "pages/sendMail.scss";
 
 // 폰트
-@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-.nanumpenscript * {
-  font-family: "Nanum Pen Script", cursive;
+@font-face {
+  font-family: "LINESeedKR-Bd";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
 }
-
 * {
-  font-family: "Nanum Pen Script", cursive;
+  font-family: "LINESeedKR-Bd";
+  color: white;
+  text-shadow: 2px 2px 0px rgba(153, 153, 153, 0.74);
 }

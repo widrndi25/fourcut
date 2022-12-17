@@ -1,7 +1,5 @@
 import express from "express";
 import morgan from "morgan";
-import helmet from "helmet";
-import cookieParser from "cookie-parser";
 import path from "path";
 import globalRouter from "./routers/globalRouter";
 import { localsMiddleware } from "./localsMiddleware";
@@ -16,11 +14,9 @@ app.use("/uploads/done", express.static(path.join(__dirname, "uploads/done")));
 app.use("/uploads/photos", express.static(path.join(__dirname, "uploads/photos")));
 app.use("/uploads/frames", express.static(path.join(__dirname, "uploads/frames")));
 
-app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
-app.use(helmet());
 
 app.use(localsMiddleware);
 

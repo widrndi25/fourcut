@@ -1,10 +1,6 @@
 /*!****************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./assets/scss/styles.scss ***!
   \****************************************************************************************************************************************************************************************/
-@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
-/*!********************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!./node_modules/sass-loader/dist/cjs.js!./assets/scss/styles.scss (1) ***!
-  \********************************************************************************************************************************************************************************************/
 html,
 body,
 div,
@@ -164,6 +160,13 @@ input:focus, input:active {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
   -webkit-align-items: center;
      -moz-box-align: center;
@@ -174,7 +177,8 @@ input:focus, input:active {
      -moz-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 60vh;
+  height: 100vh;
+  background-color: #cae3ff;
 }
 
 .header {
@@ -195,17 +199,15 @@ input:focus, input:active {
           justify-content: center;
   font-size: 100px;
   padding: 20px;
-  background-color: #ffe3e7;
   height: 10vh;
-  -webkit-box-shadow: 0px 17px 18px -3px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 17px 18px -3px rgba(0, 0, 0, 0.1);
-       box-shadow: 0px 17px 18px -3px rgba(0, 0, 0, 0.1);
+  background-color: #cae3ff;
 }
 
 .header__title {
   color: white;
-  text-shadow: 0px 3px 8px rgba(166, 166, 166, 0.4);
-  font-family: "Nanum Pen Script", cursive;
+  font-family: "LINESeedKR-Bd";
+  letter-spacing: 10px;
+  margin-top: 20px;
 }
 
 .footer {
@@ -245,12 +247,32 @@ input:focus, input:active {
       -ms-flex-pack: center;
           justify-content: center;
   height: 60vh;
+  background-color: #cae3ff;
+}
+
+.home__texts {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .home__text {
-  margin-bottom: 10px;
-  font-size: 50px;
-  font-family: "Nanum Pen Script", cursive;
+  font-family: "LINESeedKR-Bd";
+  font-size: 200px;
+  margin: 0 20px;
+  color: white;
+}
+
+.home__link {
+  font-family: "LINESeedKR-Bd";
+  font-size: 25px;
+  padding: 5px 10px;
+  -webkit-border-radius: 5%;
+     -moz-border-radius: 5%;
+          border-radius: 5%;
+  color: white;
 }
 
 .guidebox {
@@ -259,22 +281,13 @@ input:focus, input:active {
 
 .guidebox__text,
 .guidebox__button {
-  margin: 10px;
   font-size: 50px;
-}
-
-.guidebox__title {
-  margin-bottom: 20px;
-}
-
-.guidebox__button {
-  margin-top: 100px;
 }
 
 .choosePhoto-conatiner {
   text-align: center;
   font-size: 20px;
-  margin-top: 100px;
+  margin-top: -300px;
 }
 
 .select-container {
@@ -283,7 +296,6 @@ input:focus, input:active {
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 40px;
 }
 
 .photos {
@@ -392,10 +404,14 @@ input:focus, input:active {
   text-align: center;
 }
 
-.nanumpenscript * {
-  font-family: "Nanum Pen Script", cursive;
+@font-face {
+  font-family: "LINESeedKR-Bd";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
 }
-
 * {
-  font-family: "Nanum Pen Script", cursive;
+  font-family: "LINESeedKR-Bd";
+  color: white;
+  text-shadow: 2px 2px 0px rgba(153, 153, 153, 0.74);
 }

@@ -4,10 +4,40 @@
   align-items: center;
   justify-content: center;
   height: 60vh;
+  background-color: $skyblue;
+}
+.home__texts {
+  display: flex;
+}
+.home__text {
+  font-family: "LINESeedKR-Bd";
+  font-size: 200px;
+  margin: 0 20px;
+  color: white;
+}
+.home__link {
+  font-family: "LINESeedKR-Bd";
+  font-size: 25px;
+  padding: 5px 10px;
+  border-radius: 5%;
+  color: white;
 }
 
-.home__text {
-  margin-bottom: 10px;
-  font-size: 50px;
-  font-family: "Nanum Pen Script", cursive;
+@mixin paddingAnimation($animaionDelay) {
+  animation: paddingAnimation 4s ease-in infinite;
+  animation-delay: $animaionDelay;
+  @keyframes paddingAnimation {
+    0% {
+      font-size: 300px;
+      opacity: 0%;
+    }
+    50% {
+      font-size: 200px;
+      opacity: 100%;
+    }
+    100% {
+      font-size: 300px;
+      opacity: 0%;
+    }
+  }
 }

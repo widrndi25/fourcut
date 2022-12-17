@@ -18,8 +18,8 @@ import routes from "../router";
 
 const photoRouter = express.Router();
 
-photoRouter.get(routes.home, deletePhotoAll, photo);
-photoRouter.get(routes.choosePhoto, choosePhoto);
+photoRouter.get(routes.home, photo);
+photoRouter.get(routes.choosePhoto, deletePhotoAll, choosePhoto);
 photoRouter.post(routes.upload1, uploadPhoto1, postUpload);
 photoRouter.post(routes.upload2, uploadPhoto2, postUpload);
 photoRouter.post(routes.upload3, uploadPhoto3, postUpload);

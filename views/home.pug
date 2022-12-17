@@ -1,6 +1,20 @@
-extends layouts/main 
+doctype html
+html
+    head
+        title #{siteName}
+        link(rel="stylesheet", href = "/static/styles.css")
+    body 
 
-block content
-    .home-container
-        .home__text 
-            a(href=routes.photo) 시작하기
+        main.container
+            .home-container
+                .home__texts
+                    .home__texts--upper
+                        .home__text#first__column 화
+                        .home__text#second__column 필
+                    .home__texts--lower
+                        .home__text#third__column 양
+                        .home__text#fourth__column 름
+            .home__link 
+                 a(href=routes.photo) 만들러 가기!
+
+        script(src="/static/main.js")
