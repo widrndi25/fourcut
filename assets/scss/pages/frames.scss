@@ -1,13 +1,17 @@
 .frame-container {
   display: flex;
-  flex-direction: column;
-  margin-top: 400px;
+  justify-content: center;
+  align-items: center;
 }
 .framebox {
-}
-.frame {
+  display: flex;
 }
 .frame > img {
-  width: 20vw;
-  height: 20vh;
+  width: 14vw;
+  margin: 13px;
+}
+
+.form-container > input[type="submit"] {
+  margin-top: 5px;
+  color: black;
 }

@@ -2,7 +2,6 @@
 import fs from "fs";
 import fsExtra from "fs-extra";
 import path from "path";
-import express from "express";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import sharp from "sharp";
@@ -39,7 +38,7 @@ function makePhotoList() {
 async function resizePhoto(fileNumber) {
   const photos = makePhotoList();
   await sharp(photos[fileNumber - 1].input)
-    .resize(660, 860, { fit: "contain" }) // fit : contain 가로 세로 비율을 강제 유지
+    .resize(179, 103) // fit : contain 가로 세로 비율을 강제 유지
     .withMetadata() // 원본 이미지의 메타데이터 포함
     .toFormat("jpeg", { quality: 100 }) // 포맷, 퀄리티 지정
     .toFile(path.join(__dirname, "..", `uploads/done/${fileNumber}.jpg`), (err, info) => {
@@ -47,9 +46,9 @@ async function resizePhoto(fileNumber) {
     })
     .toBuffer();
 }
-async function mergePhoto() {
+async function mergePhoto(backgroundPhoto) {
   const resizePhotos = [
-    path.join(__dirname, "..", `uploads/frames/black.jpg`),
+    path.join(__dirname, "..", `uploads/frames/${backgroundPhoto}.png`),
     path.join(__dirname, "..", `uploads/done/1.jpg`),
     path.join(__dirname, "..", `uploads/done/2.jpg`),
     path.join(__dirname, "..", `uploads/done/3.jpg`),
@@ -58,10 +57,14 @@ async function mergePhoto() {
 
   await sharp(resizePhotos[0].input)
     .composite([
-      { input: resizePhotos[1].input, left: 44, top: 53 },
-      { input: resizePhotos[2].input, left: 784, top: 53 },
-      { input: resizePhotos[3].input, left: 44, top: 952 },
-      { input: resizePhotos[4].input, left: 784, top: 952 },
+      { input: resizePhotos[1].input, left: 12, top: 18 },
+      { input: resizePhotos[1].input, left: 212, top: 18 },
+      { input: resizePhotos[2].input, left: 12, top: 131 },
+      { input: resizePhotos[2].input, left: 212, top: 132 },
+      { input: resizePhotos[3].input, left: 12, top: 242 },
+      { input: resizePhotos[3].input, left: 212, top: 243 },
+      { input: resizePhotos[4].input, left: 12, top: 353 },
+      { input: resizePhotos[4].input, left: 212, top: 354 },
     ])
     .toFormat("jpeg", { quality: 100 }) // 포맷, 퀄리티 지정
     .toFile(path.join(__dirname, "..", `uploads/done/final.jpg`));
@@ -72,7 +75,7 @@ export const frame = (req, res) => res.render("frame");
 export const choosePhoto = async (req, res) => {
   res.render("choosePhoto");
 };
-export const postUpload = async (req, res) => {
+export const postUpload = (req, res) => {
   res.redirect(routes.photo + routes.choosePhoto);
 };
 export const deletePhoto1 = (req, res) => {
@@ -112,12 +115,16 @@ export const sendMail = (req, res) => {
   res.render("sendMail");
 };
 export const mergeImage = async (req, res) => {
+  const {
+    body: { selectedframe },
+  } = req;
+  console.log(selectedframe);
+
   resizePhoto(1);
   resizePhoto(2);
   resizePhoto(3);
   resizePhoto(4);
-
-  await mergePhoto();
+  await mergePhoto(selectedframe);
 
   await res.redirect(routes.photo + routes.sendMail);
 };

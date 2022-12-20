@@ -4,17 +4,15 @@ include mixins/photoBlock
 block content
     .choosePhoto-conatiner
         .select-container
-            .photos
-                .imgbox
-                    img(src="/uploads/photos/1.jpg")
+            .imgbox
+                img(src="/uploads/photos/1.jpg")
             .form-container 
                 form(action=`/photo${routes.upload1}`, method="post",  enctype= "multipart/form-data")
                     label(for="file") 사진 선택하기
                     input(type="file", id="file", name="photo1" ,required=true)
                     input(type="submit", value="사진 고르기")
                     a(href= routes.photo + routes.delete1).button 지우기!
-            .photos
-                .imgbox
+            .imgbox
                     img(src="/uploads/photos/2.jpg")
             .form-container 
                 form(action=`/photo${routes.upload2}`, method="post",  enctype= "multipart/form-data")
@@ -23,18 +21,16 @@ block content
                     input(type="submit", value="사진 고르기")
                     a(href= routes.photo + routes.delete2).button 지우기!
         .select-container
-            .photos
-                .imgbox
-                    img(src="/uploads/photos/3.jpg")
+            .imgbox
+                img(src="/uploads/photos/3.jpg")
             .form-container 
                 form(action=`/photo${routes.upload3}`, method="post",  enctype= "multipart/form-data")
                     label(for="file") 사진 선택하기
                     input(type="file", id="file", name="photo3" ,required=true)
                     input(type="submit", value="사진 고르기")
                     a(href= routes.photo + routes.delete3).button 지우기!
-            .photos
-                .imgbox
-                    img(src="/uploads/photos/4.jpg")
+            .imgbox
+                img(src="/uploads/photos/4.jpg")
             .form-container 
                 form(action=`/photo${routes.upload4}`, method="post",  enctype= "multipart/form-data")
                     label(for="file") 사진 선택하기
@@ -44,4 +40,4 @@ block content
 
 
         .button-container
-            a(href= routes.photo + routes.frame).button 다음!
+            a(href= routes.photo + routes.frame).button__text 다음!

@@ -1,8 +1,50 @@
 .guidebox {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  margin-top: -100px;
+}
+
+.guidebox__title {
+  font-size: 65px;
+  text-align: left;
+  margin-left: 50px;
+}
+
+.gudebox-step-container {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 80px;
+  padding-top: 20px;
+}
+
+.guidebox-step {
+  position: inherit;
+  width: 350px;
+  height: 300px;
+  margin-top: 50px;
+  border: 5px dashed white;
+  border-radius: 20px;
+  text-align: center;
+  align-items: center;
+}
+.guidebox__button {
+  font-size: 40px;
+  text-align: center;
+}
+.guidebox-step__outside_text {
+  position: relative;
+  top: -50px;
+  font-size: 35px;
+  text-align: center;
+}
+.guidebox-step__inside_text {
+  font-size: 50px;
   text-align: center;
 }
 
-.guidebox__text,
-.guidebox__button {
-  font-size: 50px;
+.guidebox-step__inside_emogi {
+  margin-top: 20px;
+  font-size: 150px;
 }

@@ -1,9 +1,38 @@
 extends layouts/main 
 
 block content
+
     .frame-container
         .framebox
-            .frame
-                img(src="/uploads/frames/black.jpg")
-    .buttonbox
-        a(href= routes.photo + routes.makePhoto).button 다음!
+            .uppder-framebox
+                .frame__text 1번
+                .frame
+                    img(src="/uploads/frames/1.png")
+                .frame__text 3번
+                .frame 
+                    img(src="/uploads/frames/3.png")
+            .lower-framebox
+                .frame__text 2번
+                .frame
+                    img(src="/uploads/frames/2.png")
+                .frame__text 4번
+                .frame 
+                    img(src="/uploads/frames/4.png")
+        .form-container 
+            form(action=`/photo${routes.makePhoto}`, method="post")
+                    label(for="file") 프레임 선택하기
+                    br
+                    label(for="radio") 1번
+                    input(type="radio", name="selectedframe", value="1")
+                    br
+                    label(for="radio") 2번
+                    input(type="radio", name="selectedframe", value="2")
+                    br
+                    label(for="radio") 3번
+                    input(type="radio", name="selectedframe", value="3")
+                    br
+                    label(for="radio") 4번
+                    input(type="radio", name="selectedframe", value="4")
+                    br
+                    input(type="submit", value="프레임 고르기")
+

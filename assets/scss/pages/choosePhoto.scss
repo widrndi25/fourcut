@@ -1,27 +1,21 @@
 .choosePhoto-conatiner {
   text-align: center;
   font-size: 20px;
-  margin-top: -300px;
+  margin-top: -75px;
+  display: flex;
+  flex-direction: column;
 }
 .select-container {
   display: flex;
+  box-sizing: border-box;
 }
-.photos {
-  display: flex;
-  flex-direction: column;
-}
-.form-container {
-  display: flex;
-}
-.choosePhoto-conatiner {
-  display: flex;
-  flex-direction: column;
-}
-
-.imgbox {
-}
-
 .imgbox > img {
-  height: 30vh;
-  width: 30vw;
+  height: 10vh;
+  width: 15vw;
+}
+.form-container > input[type="submit"] {
+  color: black;
+}
+.button__text {
+  font-size: 50px;
 }

@@ -17,8 +17,16 @@
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: "ONE-Mobile-POP";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
-  font-family: "LINESeedKR-Bd";
+  font-family: "ONE-Mobile-POP";
   color: white;
   text-shadow: 2px 2px 0px rgba(153, 153, 153, 0.74);
 }
