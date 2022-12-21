@@ -207,7 +207,7 @@ input:focus, input:active {
   font-family: "ONE-Mobile-POP";
   color: white;
   letter-spacing: 10px;
-  margin-top: 150px;
+  margin-top: 80px;
 }
 
 .footer {
@@ -383,8 +383,8 @@ input:focus, input:active {
 }
 
 .imgbox > img {
-  height: 10vh;
-  width: 15vw;
+  height: 300px;
+  width: 500px;
 }
 
 .form-container > input[type=submit] {
@@ -411,6 +411,7 @@ input:focus, input:active {
      -moz-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: absolute;
 }
 
 .framebox {
@@ -426,9 +427,28 @@ input:focus, input:active {
   margin: 13px;
 }
 
-.form-container > input[type=submit] {
+.frame__text {
+  font-size: 20px;
+  text-align: center;
+}
+
+.form-container-frame {
+  position: relative;
+  top: -290px;
+}
+
+.frame-submit {
   margin-top: 5px;
   color: black;
+}
+
+.form-container-frame {
+  font-size: 20px;
+}
+
+.form-container-frame > label,
+input {
+  margin-top: 10px;
 }
 
 .sendMail-container {

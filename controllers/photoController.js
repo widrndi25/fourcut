@@ -145,9 +145,9 @@ export const postMail = async (req, res) => {
   });
 
   const info = await transporter.sendMail({
-    from: `"화양필름" <${process.env.SENDER_EMAIL}>`,
+    from: `"화양네컷" <${process.env.SENDER_EMAIL}>`,
     to: email,
-    subject: `${userName}님 안녕하세요! 화양필름이 도착했습니다!`,
+    subject: `${userName}님 안녕하세요! 화양네컷이 도착했습니다!`,
     text: `안녕하세요 ${userName}님! \n
      ${userName}님이 돌고개 축제 때 만드신 소중한 추억이 도착했습니다! \n
      좋은 추억이 되셨기를 바라며 ${userName}님의 앞날이 꽃길이기를 바랍니다. :)`,
