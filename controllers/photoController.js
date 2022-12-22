@@ -38,7 +38,7 @@ function makePhotoList() {
 async function resizePhoto(fileNumber) {
   const photos = makePhotoList();
   await sharp(photos[fileNumber - 1].input)
-    .resize(179, 103) // fit : contain 가로 세로 비율을 강제 유지
+    .resize(2260, 1280) // fit : contain 가로 세로 비율을 강제 유지
     .withMetadata() // 원본 이미지의 메타데이터 포함
     .toFormat("jpeg", { quality: 100 }) // 포맷, 퀄리티 지정
     .toFile(path.join(__dirname, "..", `uploads/done/${fileNumber}.jpg`), (err, info) => {
@@ -57,17 +57,19 @@ async function mergePhoto(backgroundPhoto) {
 
   await sharp(resizePhotos[0].input)
     .composite([
-      { input: resizePhotos[1].input, left: 12, top: 18 },
-      { input: resizePhotos[1].input, left: 212, top: 18 },
-      { input: resizePhotos[2].input, left: 12, top: 131 },
-      { input: resizePhotos[2].input, left: 212, top: 132 },
-      { input: resizePhotos[3].input, left: 12, top: 242 },
-      { input: resizePhotos[3].input, left: 212, top: 243 },
-      { input: resizePhotos[4].input, left: 12, top: 353 },
-      { input: resizePhotos[4].input, left: 212, top: 354 },
+      { input: resizePhotos[1].input, left: 300, top: 455 },
+      { input: resizePhotos[1].input, left: 2850, top: 455 },
+      { input: resizePhotos[2].input, left: 300, top: 1870 },
+      { input: resizePhotos[2].input, left: 2850, top: 1870 },
+      { input: resizePhotos[3].input, left: 300, top: 3285 },
+      { input: resizePhotos[3].input, left: 2850, top: 3285 },
+      { input: resizePhotos[4].input, left: 300, top: 4699 },
+      { input: resizePhotos[4].input, left: 2850, top: 4699 },
     ])
-    .toFormat("jpeg", { quality: 100 }) // 포맷, 퀄리티 지정
-    .toFile(path.join(__dirname, "..", `uploads/done/final.jpg`));
+    .toFormat("jpg", { quality: 100 }) // 포맷, 퀄리티 지정
+    .toFile(path.join(__dirname, "..", `uploads/done/final.jpg`), (err, info) => {
+      console.log(err);
+    });
 }
 
 export const photo = (req, res) => res.render("photo");
@@ -120,10 +122,10 @@ export const mergeImage = async (req, res) => {
   } = req;
   console.log(selectedframe);
 
-  resizePhoto(1);
-  resizePhoto(2);
-  resizePhoto(3);
-  resizePhoto(4);
+  await resizePhoto(1);
+  await resizePhoto(2);
+  await resizePhoto(3);
+  await resizePhoto(4);
   await mergePhoto(selectedframe);
 
   await res.redirect(routes.photo + routes.sendMail);
